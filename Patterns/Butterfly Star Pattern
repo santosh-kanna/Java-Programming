@@ -1,0 +1,54 @@
+-- Output --
+
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+
+
+-- Code --
+
+class Butterfly{
+    public static void main(String arg[]){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the range");
+        int n = sc.nextInt();
+        int nn=n*2-1;
+        int a=nn-1;
+
+        for(int i=1;i<=nn;i++){
+            int spacecondition=i<=n ? a : a ; 
+            int condition=(i<=n) ? i : n*2-i ;
+            
+            for(int k=1;k<=condition;k++){
+                System.out.print("*");
+            }
+
+            for(int j=1;j<=spacecondition;j++){
+                System.out.print(" ");
+            }
+            
+            for(int k=1;k<=condition;k++){
+                System.out.print("*");
+            }
+
+            if(i<n){
+                a=a-2;
+            }else{
+                a=a+2;
+            }
+
+            System.out.println();
+        }
+      }
+
+    }
