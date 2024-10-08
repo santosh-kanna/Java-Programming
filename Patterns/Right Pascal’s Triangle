@@ -1,0 +1,31 @@
+---Output---
+
+*
+**
+***
+****
+*****
+******
+*******
+******
+*****
+****
+***
+**
+*
+
+
+---Code---
+
+class Rightpascal{
+    public static void main(String args[]){
+        System.out.println("Enter the range");
+        int n=sc.nextInt();
+        for(int row=1;row<=2*n-1;row++){
+            int condition=row<=n?row:2*n-row ;
+            for(int col=1;col<=condition;col++){
+                System.out.print("*");
+            }System.out.println();
+        }
+    }
+}
