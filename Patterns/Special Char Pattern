@@ -1,0 +1,32 @@
+---Output---
+
+B#B*B%B-
+R#R*R%R-
+B#B*B%B-
+R#R*R%R-
+
+---Code---
+
+class specialchar {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the range");
+        int n = sc.nextInt();
+        char c[] = {'#', '*', '%', '-'};
+
+        if (n <= 4) {
+            for (int i = 1; i <= n; i++) {
+                for (int j = 0; j < n; j++) {
+                    if (i % 2 == 0) {
+                        System.out.print("R" + c[j]);
+                    } else {
+                        System.out.print("B" + c[j]);
+                    }
+                }
+                System.out.println();
+            }
+        } else {
+            System.out.println("Not Valid");
+        }
+    }
+}
