@@ -1,0 +1,51 @@
+class AltPrime {
+    public static void main(String args[]){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the from range");
+        int fromrange = sc.nextInt();
+        System.out.println("Enter the to range");
+        int torange = sc.nextInt();
+
+        int count = 1;
+        for (int i = fromrange; i <= torange; i++) {
+            Boolean flag = true;
+
+            if (i <= 1) {
+                flag = false;
+                break;
+            }
+
+            for (int j = 2; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                if (count == 1) {
+                    System.out.println(i);
+                    count++;
+                } else {
+                    count--;
+                }
+            }
+        }
+
+    }
+}
+
+
+---Output---
+
+Enter the from range
+2
+Enter the to range
+40
+
+2
+5
+11
+17
+23
+31
