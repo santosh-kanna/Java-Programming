@@ -1,0 +1,33 @@
+class SpyNumber {
+    
+    public static int product(int prodVal, int digit) {
+        return prodVal * digit;
+    }
+
+    public static int sum(int sumVal, int digit) {
+        return sumVal + digit;
+    }
+
+    public static void main(String[] args) {
+        int n = 1124; 
+        int dup = n; 
+        int sumVal = 0, prodVal = 1;
+
+        
+        while (dup != 0) {
+            int a = dup % 10;
+            prodVal = product(prodVal, a); 
+            sumVal = sum(sumVal, a);      
+            dup = dup / 10;   
+        }
+
+        
+        if (prodVal == sumVal) {
+            System.out.println(n + " is a Spy Number");
+        } else {
+            System.out.println(n + " is not a Spy Number");
+        }
+    }
+}
+
+
