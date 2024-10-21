@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+class perfectrange {
+    public static void main(String args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the from range");
+        int from = sc.nextInt();
+        System.out.println("Enter the to range");
+        int to = sc.nextInt();
+
+        for (int i = from; i <= to; i++) {
+            int sum = 0;
+            for (int j = 1; j <= i / 2; j++) {
+                if (i % j == 0) {
+                    sum += j;
+                }
+            }
+            if (sum == i) {
+                System.out.println(i);
+            }
+        }
+
+    }
+}
