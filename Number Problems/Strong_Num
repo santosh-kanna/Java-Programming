@@ -1,0 +1,33 @@
+class strongnum {
+
+    public int strongno(int num) {
+        int fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        return fact;
+    }
+
+    public static void main(Sting args[]){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number");
+        int n = sc.nextInt();//145
+        int dup = n, sum = 0;
+
+        while (dup != 0) {
+
+            int a = dup % 10;
+            sum = sum + strongno(a);
+            dup = dup / 10;
+
+        }
+
+        if (sum == n) {
+            System.out.println(n + "is a Strong Number ");
+        }
+
+    }
+}
+
+    
