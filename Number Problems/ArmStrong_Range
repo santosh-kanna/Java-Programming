@@ -1,0 +1,29 @@
+class Armstrngrange {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the initial Value...");
+        int from = sc.nextInt();
+        System.out.println("Enter the final Value...");
+        int to = sc.nextInt();
+
+        for (int i = from; i <= to; i++) {
+            int count = 0, num = i;
+            while (num != 0) {
+                num = num / 10;
+                count++;
+            }
+            //System.out.println(count);
+            int result = 0, dup = 0, ans = i;
+            while (ans != 0) {
+                dup = ans % 10;
+                result = result + (int) Math.pow(dup, count);
+                ans = ans / 10;
+            }
+
+            if (result == i) {
+                System.out.println(i + "--" + result);
+            }
+        }
+
+    }
+}
