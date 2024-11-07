@@ -1,0 +1,22 @@
+Fetching the Pairs
+
+---Input---
+abaabaaabaaaaa
+
+---Output---
+abaaba
+aa
+aaaa
+
+class regex2 {
+  public static void main(String args[]){
+        String exp="([a-z]+)\\1";
+        String s="abaabaaabaaaaa";
+        
+        Pattern p=Pattern.compile(exp);
+        Matcher m=p.matcher(s);
+        while(m.find()){
+            System.out.println(m.group());
+        }
+    }
+}
