@@ -1,0 +1,32 @@
+-> Regular Expression is used to achieve Client Side Validation.
+-> Regular Expression package is present in Util.
+-> Two classes are present in Regex they are 
+              1. Pattern Class ( Consists of compile(), matcher(), matches() )
+              2. Matcher Class ( Consists of find() )
+-> In regex there is a lots of Characters, Expressions and Quantifier.
+
+
+
+---Input---
+success
+
+---Output---
+1s1u2c1e2s
+
+---Code---
+
+class regex{
+  Public static void main(String args[]){
+        String exp="([a-z])\\1*";            //Game Changer
+        String str="success";
+        
+        Pattern p=Pattern.compile(exp);
+        Matcher m=p.matcher(str);
+        String str1="";
+        while(m.find()){
+            String s=m.group();
+            str1+=s.length()+s.substring(0,1);
+        }
+        System.out.println(str1);
+    }
+}
