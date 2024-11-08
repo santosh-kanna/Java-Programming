@@ -1,0 +1,26 @@
+---Input---
+Java is very easy
+
+---Output---
+easy very is Java
+
+
+---Code---
+
+public class reversewords {                                                                 // Using Split Method
+
+    static String reversewithsplit(String str) {
+        String s[] = str.split(" ");
+        String result = "";
+        for (int i = s.length - 1; i >= 0; i--) {
+            result += s[i] + " ";
+        }
+
+        return result;
+    }
+   public static void main(String[] args) {
+          System.out.println(reversewithsplit("Java is very easy"));
+   }
+
+}
+
