@@ -1,0 +1,51 @@
+---Input---
+Java is very easy
+
+---Output---
+easy very is Java
+
+---Code---
+
+class reverseword {                                                          // Without Split()
+    static StringBuilder reversewithoutsplit(String str) {
+        int a = 0;
+        int count = 1;
+
+        char c[] = str.toCharArray();
+        for (int j = c.length - 1; j >= 0; j--) {
+            if (c[j] == ' ') {
+                count++;
+            }
+        }
+
+        String result[] = new String[count];
+        int dup = count - 1;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == ' ' || i == str.length() - 1) {
+                if (i == str.length() - 1) {
+
+                    result[dup] = str.substring(a, i + 1);
+                } else {
+
+                    result[dup] = str.substring(a, i);
+                    a = i + 1;
+
+                }
+                dup--;
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < result.length; i++) {
+            sb.append(result[i] + " ");
+        }
+        return sb;
+
+    }
+
+  public static void main(String[] args) {
+        System.out.println(reversewithoutsplit("Java is very easy"));
+    }
+
+}
