@@ -1,0 +1,19 @@
+public class cntnoofdigitsinstr {
+    
+    static int iscount(String a){
+        int result=0;
+        for(int i=0;i<a.length();i++){
+            char c=a.charAt(i);
+            if(c>='0' && c<='9'){
+                result+=c-48;
+            }
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        String s="san12osh4ka3";
+        System.out.println(iscount(s));
+    }
+    
+}
