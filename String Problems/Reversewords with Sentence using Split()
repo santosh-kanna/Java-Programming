@@ -1,0 +1,28 @@
+---Input---
+
+Java is very easy
+
+---Output---
+
+ysae yrev si avaJ
+
+---Code---
+
+class reversewords()
+{
+static String reversewordandsentencewithsplit(String str) {                       //Reversing the words along with the letters
+        String spl[] = str.split(" ");
+        String result = "";
+        for (int i = spl.length - 1; i >= 0; i--) {
+            for (int j = spl[i].length() - 1; j >= 0; j--) {
+                result += spl[i].charAt(j);
+            }
+            result += " ";
+        }
+        return result;
+    }
+
+  public static void main(String args[]){
+    System.out.println(reversewordandsentencewithsplit("Java is very easy"));
+    }
+}  
