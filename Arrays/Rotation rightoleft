@@ -1,0 +1,32 @@
+---Input---
+1,2,3,4,5,6
+
+---Output---
+6,5,1,2,3,4
+
+---Code---
+
+public class Small {
+  
+    static int[] rotationrighttoleft(int arr[]){
+        
+        int traverse=arr[arr.length-1];                          
+        for(int i=arr.length-2 ;i>=0 ;i--){               
+            arr[i+1]=arr[i];
+        }
+        arr[0]=traverse;
+        
+        return arr;
+    }
+    
+    public static void main(String[] args) {
+        
+         int arr[]={1,2,3,4,5,6};
+         int iteration=0;
+         while(iteration != 2){
+             rotationrighttoleft(arr);
+             iteration++;
+             System.out.println(Arrays.toString(arr));
+         }
+    }
+  }
