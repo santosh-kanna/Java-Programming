@@ -1,0 +1,19 @@
+class harshad {
+      public static void harshadno() {
+        int num = 21, dup = num, result = 0, a;
+        while (dup != 0) {
+            a = dup % 10;
+            result = result + a;
+            dup = dup / 10;
+        }
+        if (num % result == 0) {
+            System.out.println(num + " is a Harshad Number");
+        } else {
+            System.out.println(num + " is not a Harshad Number");
+        }
+    }
+    public static void main(String arg[]) {
+        harshadno();
+    
+    }
+}
