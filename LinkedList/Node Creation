@@ -1,0 +1,29 @@
+
+package linkedlist;
+
+import javafx.scene.Node;
+
+class node{
+    int data;
+    Node next;
+    
+    node(int data,Node next1){
+        this.data=data;
+        this.next=next1;
+    }
+    
+    node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+
+public class Creation {
+    
+    public static void main(String args[]){
+         int[] arr = {12, 5, 8, 7};
+         node y=new node(arr[0]);
+         System.out.println(y.data);
+    }
+    
+}
