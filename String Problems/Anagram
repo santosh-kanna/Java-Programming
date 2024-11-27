@@ -1,0 +1,25 @@
+public class anagram {
+    
+    public static boolean isanagram(String str1,String str2){
+        while(true){
+            if(str1.length() != str2.length()){
+                return false;
+            }
+            
+            if(str1.length() ==0 && str2.length() ==0){
+                return true;
+            }
+            
+            char c=str1.charAt(0);
+            str1=str1.replace(c+"","");                 //String cannot be converted into char
+            str2=str2.replace(c+"", "");
+        }
+        
+       // return true;
+    }
+    
+    public static void main(String args[]){
+        System.out.println(isanagram("ramana","amaran"));
+    }
+    
+}
