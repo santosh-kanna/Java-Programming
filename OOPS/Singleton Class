@@ -1,0 +1,40 @@
+public class Moviehall {
+
+    private int seats = 50;
+    private static Moviehall m = null;
+
+    private Moviehall() {
+
+    }
+
+    public void bookticket(int n) {
+        if (n <= seats) {
+            seats = seats - n;
+            System.out.println(n + " Seats are booked");
+        } else {
+            System.out.println(n + " Seats are not available");
+        }
+    }
+
+    public static Moviehall getInstance() {
+        if (m == null) {
+            m = new Moviehall();
+            return m;
+        } else {
+            return m;
+        }
+    }
+
+    public int getseats() {
+        return seats;
+    }
+
+    public static void main(String[] args) {
+        Moviehall user1 = Moviehall.getInstance();
+        user1.bookticket(30);
+        Moviehall user2 = Moviehall.getInstance();
+        user2.bookticket(21);
+        System.out.println("Sorry "+user2.getseats()+" Seats are only available");
+    }
+
+}
