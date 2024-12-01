@@ -1,0 +1,15 @@
+public class Empmain {
+    public static void main(String[] args) {
+        Emp arr[]={
+            new Emp("aMagesh",2320.5),
+            new Emp("bSantosh",3300.2),
+            new Emp("cHema",2220.7),
+            new Emp("dakash",4210.5)
+        };
+        Arrays.sort(arr);
+        
+        for(Emp e:arr){
+            System.out.print(e);
+        }
+    }
+}
