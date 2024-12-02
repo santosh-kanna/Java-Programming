@@ -1,0 +1,7 @@
+public class InsufficientBalException extends Exception {                                    // Own Exception Creation
+    
+    public InsufficientBalException() {
+        System.out.println("Balance is very less");
+    }
+    
+}
