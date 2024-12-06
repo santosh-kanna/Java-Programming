@@ -1,0 +1,21 @@
+public class dtob {
+    public static void main(String arg[]) {
+        int num = 18;
+        ArrayList<Integer> arr = new ArrayList<>();
+        int mod;
+        while (num > 0) {
+            mod = num % 2;
+            if (mod == 0) {
+                num = num / 2;
+                arr.add(0);
+            } else {
+                num = num / 2;
+                arr.add(1);
+            }
+        }
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            System.out.print(arr.get(i));
+        }
+
+    }
+}
