@@ -1,0 +1,26 @@
+public class Friendlypair {
+    public void friendlypair() {
+        int num1 = 30, num2 = 140;
+        if (sum(num1) / num1 == 1 && sum(num2) / num2 == 1) {
+            System.out.println("It is a friendly Pair");
+        } else {
+            System.out.println("It is not a friendly pair");
+        }
+    }
+
+    public int sum(int n) {
+        int sum = 0;
+        for (int i = 1; i <= n / 2; i++) {
+            if (n % i == 0) {
+                sum += i;
+            }
+        }
+        return sum;
+
+    }
+
+ public static void main(String arg[]) {
+    Friendlypair fp = new Friendlypair();
+    fp.friendlypair();
+ }
+}
