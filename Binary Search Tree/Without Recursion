@@ -1,0 +1,32 @@
+public class BSTwithoutrec {
+
+    private Node root;
+
+    public void add(int key) {
+        if (root == null) {
+            root = new Node(key);
+            return;
+        }
+
+        Node curr = root;
+        Node prev = null;
+
+        while (curr != null) {
+            if (key < curr.key) {
+                prev = curr;
+                curr = curr.left;
+            } else if (key > curr.key) {
+                prev = curr;
+                curr = curr.right;
+            } else {
+                return;
+            }
+        }
+
+        if (key < prev.key) {
+            prev.left = new Node(key);
+        } else if (key > prev.key) {
+            prev.right = new Node(key);
+        }
+    }
+}
