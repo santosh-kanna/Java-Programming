@@ -1,0 +1,15 @@
+public class lcm {
+  public static void main(String args[]){
+        int num1 = 35, num2 = 125, n;
+        System.out.println(num1 + "," + num2);
+        int a = (num1 > num2) ? num1 : num2;
+        while (true) {
+            System.out.println(a+"...For checking");
+            if ((a % num1 == 0) && (a % num2 == 0)) {
+                System.out.println("The value is " + a);
+               return;
+            }
+            a++;        
+    }
+  }
+}     
