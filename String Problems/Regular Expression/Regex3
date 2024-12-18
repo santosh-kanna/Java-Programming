@@ -1,0 +1,20 @@
+public class Regex3 {
+    
+    public static void main(String[] args) {
+        String s="success";
+        String exp="([a-z])\\1+";
+        
+        Pattern p=Pattern.compile(exp);
+        Matcher m=p.matcher(s);
+      
+        while(m.find()){
+            String dup=m.group();
+            String sub=dup.substring(0,1);
+            s=s.replace(dup,sub);
+        }
+        System.out.println(s);
+    }
+    
+}
+
+Ip: success    Output: suces
