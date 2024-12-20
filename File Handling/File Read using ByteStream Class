@@ -1,0 +1,20 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileRead {
+    public static void main(String[] args) throws IOException {
+        File fr = new File("C:\\Users\\Santosh Kanna\\Documents\\NetBeansProjects\\Demofile0.txt");
+        FileInputStream f=new FileInputStream(fr);
+        if(fr.canRead()){
+            int n = f.read();
+            while(n!=-1){
+                System.out.print((char)n);
+                n = f.read();
+        }
+        
+        }
+        f.close();
+    }
+}
