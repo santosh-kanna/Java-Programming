@@ -1,0 +1,7 @@
+-> In File Handling there is a concept called Stream.
+-> In Stream concept we have 2 types of classes ,
+            1. ByteStream class
+            2. CharacterStream class
+
+(1) ByteStream class is a class which has FileInputStream() to read and FileOutputStream() to write.
+(2) Character class is a class which has FileReader() to read and FileWriter() to write.
