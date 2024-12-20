@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+                        
+public class BufferReader {                                          //It works more faster than Byte and Character Stream
+
+    public static void main(String[] args) throws IOException {
+        FileReader f = new FileReader("C:\\Users\\Santosh Kanna\\Documents\\NetBeansProjects\\Demofile1.txt");
+        BufferedReader b = new BufferedReader(f);
+        String exp = "[6-9][0-9]{9}";
+        Pattern p = Pattern.compile(exp);
+        String s = b.readLine();
+        while (s != null) {
+            Matcher m = p.matcher(s);
+            while (m.find()) {
+                System.out.println(m.group());
+            }
+            s = b.readLine();
+        }
+    }
+
+}
