@@ -1,0 +1,13 @@
+public class Main {
+
+    public static void main(String[] args) {
+        A<Integer> a = new A<>();
+        a.add(10);
+        System.out.println(a.get());
+        System.out.println("------------------------");
+
+        A<String> b = new A<>();
+        b.add("Santos");
+        System.out.println(b.get());
+    }
+}
