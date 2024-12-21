@@ -1,0 +1,13 @@
+public class A<E> {
+    
+    E ref;
+    
+    public void add(E e){
+        ref=e;
+    }
+    
+    public E get(){
+        return ref;
+    }
+    
+}
