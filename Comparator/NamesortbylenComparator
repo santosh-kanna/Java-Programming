@@ -1,0 +1,6 @@
+public class NamesortbylenComparator implements Comparator<Student> {
+
+    public int compare(Student s1, Student s2) {
+        return s1.Name.length() - s2.Name.length();
+    }
+}
