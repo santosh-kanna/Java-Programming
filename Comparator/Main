@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+public class Main {                                                                              // Using Generic Type
+    
+    public static void main(String[] args) {
+        
+        ArrayList<Student> ar = new ArrayList<>();
+        ar.add(new Student(107,"SantoshKanna",35));
+        ar.add(new Student(108,"Akash",22));
+        ar.add(new Student(109,"Hemanth",19));
+        
+        System.out.println("Sorting Age");
+        Collections.sort(ar,new AgeComparator());
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println("Sorting Name ");
+        Collections.sort(ar,new NameComparator());
+        
+        System.out.println("-------------------------------------");
+        
+        System.out.println("Sorting Name by length");
+        Collections.sort(ar,new NamesortbylenComparator());
+        
+        for(Student st:ar){
+            System.out.println("RollNo : "+st.Rollno+" Name : "+st.Name+" Age : "+st.Age);
+        }
+        
+    }
+    
+}
