@@ -1,0 +1,30 @@
+public class Emp implements Comparable {
+
+    String name;
+    double sal;
+
+    public Emp(String n, double s) {
+        name = n;
+        sal = s;
+
+    }
+
+    public int compareTo(Object arg) {
+        Emp e = (Emp) arg;
+        if (sal > e.sal) {
+
+            return 1;
+        }
+        if (sal < e.sal) {
+
+            return -1;
+        }
+
+        return 0;
+    }
+
+    public String toString() {
+        return " Name= " + name + " , Sal = " + sal + "\n";
+    }
+
+}
