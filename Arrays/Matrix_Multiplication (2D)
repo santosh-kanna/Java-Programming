@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class Matrix_Multiplication {
+
+    public static void addInput(int matrix[][], Scanner sc) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+    }
+
+    public static void displayMatrix(int[][] matrix, String name) {
+        System.out.println("Matrix " + name + ":");
+        for (int[] row : matrix) {
+            for (int value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
+    public static int[][] multiply(int a[][], int b[][]) {
+        int len = a.length;
+        int c[][] = new int[a.length][a[0].length];
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                for (int k = 0; k < len; k++) {
+                    c[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+        return c;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows and columns for the first matrix:");
+        int rowsA = sc.nextInt();
+        int colsA = sc.nextInt();
+        int[][] a = new int[rowsA][colsA];
+
+        System.out.println("Enter the number of rows and columns for the second matrix:");
+        int rowsB = sc.nextInt();
+        int colsB = sc.nextInt();
+        int[][] b = new int[rowsB][colsB];
+
+        System.out.println("Enter the values for the first matrix:");
+        addInput(a, sc);
+
+        System.out.println("Enter the values for the second matrix:");
+        addInput(b, sc);
+
+        displayMatrix(a, "A");
+        displayMatrix(b, "B");
+
+        int result[][] = multiply(a, b);
+
+        System.out.println("After Multiplication...");
+        for (int n[] : result) {
+            for (int arr : n) {
+                System.out.print(arr);
+            }
+            System.out.println();
+        }
+    }
+}
