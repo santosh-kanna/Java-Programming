@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Rotate_90degree {
+
+    public static int[][] transpose(int matrix[][]) {
+
+        int trans[][] = new int[matrix.length][matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                trans[j][i] = matrix[i][j];
+            }
+        }
+        return trans;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of rows and columns for the Matrix:");
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        int[][] a = new int[rows][cols];
+
+        System.out.println("Enter the elements of the matrix");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        int trans[][] = transpose(a);
+
+        int row = trans.length;
+        int column = trans[0].length;
+        int result[][] = new int[row][column];
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                result[i][row - 1 - j] = trans[i][j];
+            }
+        }
+        System.out.println("Array Rotation 90degree ");
+        for (int roww[] : result) {
+            for (int value : roww) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+        }
+
+    }
+
+}
