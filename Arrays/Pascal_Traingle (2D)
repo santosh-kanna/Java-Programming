@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Pascal_Traingle {
+
+    static int[][] isPascal(int n[][]) {
+
+        for (int i = 0; i < n.length; i++) {
+            n[i] = new int[i + 1];
+            for (int j = 0; j < n[i].length; j++) {
+                if ((i == j) || (j == 0)) {
+                    n[i][j] = 1;
+                } else {
+                    n[i][j] = n[i - 1][j - 1] + n[i - 1][j];
+                }
+            }
+
+        }
+        return n;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Size :");
+        int n = sc.nextInt();
+        int matrix[][] = new int[n][];
+        isPascal(matrix);
+
+        //Designing
+        int sp = n - 1;
+        for (int num[] : matrix) {
+            for (int j = 0; j <= sp; j++) {
+                System.out.print("  ");
+            }
+            for (int arr : num) {
+                System.out.print(arr + "   ");
+            }
+            System.out.println();
+            sp--;
+        }
+
+    }
+
+}
