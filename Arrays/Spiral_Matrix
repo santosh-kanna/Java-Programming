@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+public class Spiral_Matrix {
+
+    static int[][] spiral(int size) {
+
+        int arr[][] = new int[size][size];
+        int row = 0;
+        int col = -1;
+        char dir = 'r';
+        for (int i = 1; i <= size * size; i++) {
+
+            switch (dir) {
+                case 'r': {
+                    col++;
+                    arr[row][col] = i;
+                    if (col == size - 1 || arr[row][col + 1] != 0) {
+                        dir = 'd';
+                    }
+                    break;
+                }
+                case 'd': {
+                    row++;
+                    arr[row][col] = i;
+                    if (row == size - 1 || arr[row + 1][col] != 0) {
+                        dir = 'l';
+                    }
+                    break;
+
+                }
+                case 'l': {
+                    col--;
+                    arr[row][col] = i;
+                    if (col == 0 || arr[row][col - 1] != 0) {
+                        dir = 'u';
+                    }
+                    break;
+                }
+                case 'u': {
+                    row--;
+                    arr[row][col] = i;
+                    if (arr[row - 1][col] != 0) {
+                        dir = 'r';
+                    }
+                    break;
+
+                }
+
+            }
+
+        }
+        return arr;
+
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Size");
+        int size = sc.nextInt();
+        int arr[][] = spiral(size);
+
+        for (int row[] : arr) {
+            for (int value : row) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
+            System.out.println();
+        }
+
+    }
+}
