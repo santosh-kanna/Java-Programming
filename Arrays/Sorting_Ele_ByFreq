@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class Sorting_Ele_ByFreq {
+
+    public static void main(String[] args) {
+
+        int arr[] = {5, 3, 5, 2, 8, 2, 3, 3};
+
+        // Step 1: Count the frequency of each element
+
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (hm.containsKey(arr[i])) {
+                hm.put(arr[i], hm.get(arr[i]) + 1);
+            } else {
+                hm.put(arr[i], 1);
+            }
+        }
+        System.out.println(hm);
+        
+
+        // Step 2: Sort the elements by frequency
+
+        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(hm.entrySet());
+        list.sort(new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> e1, Map.Entry<Integer, Integer> e2) {
+                // Sort by frequency in descending order
+                int freqCompare = e2.getValue() - e1.getValue();
+                if (freqCompare != 0) {
+                    return freqCompare;
+                }
+                // If frequencies are the same, sort by the key in ascending order
+                return e1.getKey() - e2.getKey();
+            }
+        });
+
+        // Step 3: Print the sorted elements
+
+        System.out.println("Elements sorted by frequency:");
+        for (Map.Entry<Integer, Integer> entry : list) {
+            for (int i = 0; i < entry.getValue(); i++) {
+                System.out.print(entry.getKey() + " ");
+            }
+        }
+
+    }
+}
