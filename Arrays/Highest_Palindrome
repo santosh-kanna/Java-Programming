@@ -1,0 +1,37 @@
+import java.util.Arrays;
+
+
+public class HighestPalindrome {
+
+    public static boolean checkPalindrome(int orgvalue) {
+        int dupvalue = orgvalue;
+        int result = 0;
+        while (dupvalue != 0) {
+            int a = dupvalue % 10;
+            result = result * 10 + a;
+            dupvalue = dupvalue / 10;
+        }
+        if (result == orgvalue) {
+            return true;
+        }
+        return false;
+    }
+
+    public static int isHighest(int arr[]) {
+
+        int len = arr.length - 1;
+        for (int i = len; i >= 0; i--) {
+            if (checkPalindrome(arr[i])) {
+                return arr[i];
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 232, 4554554, 54545, 999991};
+        Arrays.sort(arr);
+        System.out.println(isHighest(arr));
+    }
+
+}
