@@ -1,0 +1,27 @@
+public fact {
+
+   static void naturalnoasc(int n){
+        if(n==0){
+            return ;
+        }
+        System.out.println(n);
+        naturalnoasc(n-1);
+    }
+    
+    static void naturalnodsc(int n){
+        if(n==0){
+            return ;
+        }
+        
+        naturalnodsc(n-1);
+        System.out.println(n);
+    }
+    
+    
+    
+    public static void main(String arg[]) {
+        
+        naturalnoasc(5);
+        naturalnodsc(5);
+    }
+}
