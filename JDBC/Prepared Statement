@@ -1,0 +1,55 @@
+package dml;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class preparedstatement {
+	
+	private static String url="jdbc:postgresql://localhost:5432/base1";
+	private static String user="postgres";
+	private static String password="123";
+	
+	public static void main(String args[]) {
+		Connection con=null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			con=DriverManager.getConnection(url,user,password);
+			//String ins="Insert into stu Values(?,?,?)";
+			String upd="Update stu set name=? where id=?";
+			//PreparedStatement ps = con.prepareStatement(ins);
+			PreparedStatement ps = con.prepareStatement(upd);
+			
+			/*
+			ps.setInt(1, 1);						//It won't work 
+			ps.setString(2,"Soori");
+			ps.setInt(3, 18);
+			
+			ps.setInt(1, 2);           //It only Work
+			ps.setString(2,"kala");
+			ps.setInt(3, 48);
+			*/
+			ps.setString(1,"Sasikala");
+			ps.setInt(2,2);
+			
+			ps.execute();
+			System.out.print("Executed Successfully");
+			
+		} catch (ClassNotFoundException e) {
+			
+			e.printStackTrace();
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
