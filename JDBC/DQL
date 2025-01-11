@@ -1,0 +1,45 @@
+package dml;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class dql {
+	
+	private static String url="jdbc:postgresql://localhost:5432/base1";
+	private static String user="postgres";
+	private static String password="123";
+	
+	public static void main(String args[]) {
+		Connection con=null;
+		try {
+			Class.forName("org.postgresql.Driver");
+			con=DriverManager.getConnection(url,user,password);
+			Statement stmt=con.createStatement();
+			String s="Select * from stu";
+			ResultSet rs=stmt.executeQuery(s);
+			
+			while(rs.next()) {
+				System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+
+}
