@@ -1,0 +1,19 @@
+public class ReverseNumber {
+
+    public static int reverseNumber(int number, int reversed) {
+       
+        if (number == 0) {
+            return reversed;
+        }
+        
+        int lastDigit = number % 10;
+        reversed = reversed * 10 + lastDigit;
+        return reverseNumber(number / 10, reversed);
+    }
+
+    public static void main(String[] args) {
+        int number = 12345; // Input number to reverse
+        int reversed = reverseNumber(number, 0);
+        System.out.println("Reversed number: " + reversed);
+    }
+}
