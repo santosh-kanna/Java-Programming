@@ -1,0 +1,31 @@
+public class PerfectNumber {
+
+    public static int sumOfDivisors(int num, int i) {
+        if (i == 1) {
+            return 1; // Base case: 1 is a divisor of every number
+        }
+        if (num % i == 0) {
+            return i + sumOfDivisors(num, i - 1); 
+        } else {
+            return sumOfDivisors(num, i - 1); 
+        }
+    }
+
+    
+    public static boolean isPerfectNumber(int num) {
+        if (num <= 1) {
+            return false; 
+        }
+        int sum = sumOfDivisors(num, num / 2); 
+        return sum == num; 
+    }
+
+    public static void main(String[] args) {
+        int number = 6; 
+        if (isPerfectNumber(number)) {
+            System.out.println(number + " is a Perfect Number.");
+        } else {
+            System.out.println(number + " is not a Perfect Number.");
+        }
+    }
+}
