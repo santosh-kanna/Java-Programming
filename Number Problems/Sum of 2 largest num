@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class Main
+{
+/*
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		 Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int arr[]={a,b,c};
+        
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]<arr[i+1]){
+                int temp=arr[i];
+                arr[i]=arr[i+1];
+                arr[i+1]=temp;
+                
+                i=-1;
+            }
+            
+        }
+        System.out.print(arr[0]+arr[1]);
+ }
+*/
+
+ public static int sumOfTwoLargest(int a,int b,int c) {
+        
+        int max=Math.max(a,Math.max(b,c));
+        
+        if(max==a){
+            return a+Math.max(b,c);
+        }else if(max==b){
+            return b+Math.max(a,c);
+        }else{
+            return c+Math.max(a,b);
+        }
+        
+    }
+    
+	public static void main(String[] args) {
+
+		Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        
+    System.out.print(sumOfTwoLargest(a,b,c));
+        
+	}
+}
