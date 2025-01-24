@@ -1,0 +1,12 @@
+public class FoodTruckSingleThread {                                                      // Single Thread (Sequential Execution)
+
+    public static void main(String[] args) {
+        System.out.println("Taking order from Customer A...");
+        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+        
+        System.out.println("Preparing food for Customer A...");
+        try { Thread.sleep(3000); } catch (InterruptedException e) {}
+        
+        System.out.println("Delivering food to Customer A...");
+    }
+}
