@@ -1,0 +1,39 @@
+class OrderTask extends Thread {
+
+    public void run() {
+        System.out.println("Taking order from Customer A...");
+        try { Thread.sleep(2000); } catch (InterruptedException e) {}
+    }
+}
+
+class FoodPrepTask extends Thread {
+    public void run() {
+        System.out.println("Preparing food for Customer B...");
+        try { Thread.sleep(3000); } catch (InterruptedException e) {}
+    }
+}
+
+class DeliveryTask extends Thread {
+    public void run() {
+        System.out.println("Delivering food to Customer C...");
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
+    }
+}
+
+public class FoodTruckMultiThread {
+    public static void main(String[] args) {
+        Thread orderThread = new OrderTask();
+        Thread foodPrepThread = new FoodPrepTask();
+        Thread deliveryThread = new DeliveryTask();
+
+        orderThread.start();
+        foodPrepThread.start();
+        deliveryThread.start();
+    }
+}
+
+Output :
+
+Taking order from Customer A...
+Preparing food for Customer B...
+Delivering food to Customer C...
