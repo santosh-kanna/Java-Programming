@@ -10,3 +10,12 @@ public class FoodTruckSingleThread {                                            
         System.out.println("Delivering food to Customer A...");
     }
 }
+
+
+Output :
+
+Taking order from Customer A...
+(2-second pause)
+Preparing food for Customer A...
+(3-second pause)
+Delivering food to Customer A...
