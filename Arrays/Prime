@@ -1,0 +1,35 @@
+package RamanaSir;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Prgm2 {
+
+    public static ArrayList<Integer> prime(ArrayList<Integer> arr) {
+        ArrayList<Integer> result = new ArrayList<>();
+        
+        for (int num : arr) {
+            if (isPrime(num)) {
+                result.add(num);
+            }
+        }
+        return result;
+    }
+
+    // Efficient prime check function
+    public static boolean isPrime(int num) {
+        if (num < 2) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+        System.out.println("Prime Numbers: " + prime(arr));
+    }
+}
