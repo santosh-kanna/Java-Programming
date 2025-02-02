@@ -1,0 +1,14 @@
+public class ArrayLengthWithoutLength {
+
+    public static void main(String[] args) {
+        int arr[] = {2, 0, 5, 3, 1, 0, 3, 1};
+        int count = 0;
+
+        // Iterate through the array to count elements
+        for (int num : arr) {
+            count++;
+        }
+
+        System.out.println("Length of the array: " + count);
+    }
+}
