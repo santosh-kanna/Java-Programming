@@ -1,0 +1,20 @@
+package lambda_expression;
+
+import java.util.function.Predicate;
+
+public class lambda_expression2 {
+    
+    public static void main(String args[]){
+        Emp[] e={ new Emp("Amaran",30,50000),
+                        new Emp("Mara",25,60000),
+                        new Emp("Dass",40,70000)
+        };
+        
+        Predicate<Emp> p=i->i.salary>60000;
+        for(Emp emp:e){
+            if(p.test(emp)){
+                System.out.print(emp);
+            }
+        }
+    }
+}
