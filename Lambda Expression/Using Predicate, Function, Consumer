@@ -1,0 +1,40 @@
+package lambda_expression;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+public class lambda_expression3 {
+
+    public static void main(String[] args) {
+        Emp e[] = {
+            new Emp("Amaran", 20, 40000),
+            new Emp("Mara", 30, 50000),
+            new Emp("Leo", 40, 60000)
+        };
+        Predicate<Integer> p = i -> i < 6000;
+        Consumer<Emp> cs = j -> System.out.println(j.name + " : " + j.age);
+
+        Function<Emp, Integer> fn = f -> {
+            int bonus = 0;
+            if (f.salary >= 40000 && f.salary < 50000) {
+                bonus = (f.salary * 10) / 100;
+                return bonus;
+            } else if (f.salary >= 50000 && f.salary < 60000) {
+                bonus = (f.salary * 20) / 100;
+                return bonus;
+            } else {
+                bonus = (f.salary * 30) / 100;
+                return bonus;
+            }
+        };
+
+        for (Emp emp : e) {
+            int bonus = fn.apply(emp);
+            if (p.test(bonus)) {
+                cs.accept(emp);
+                System.out.println("Bonus :" + bonus);
+            }
+        }
+    }
+}
