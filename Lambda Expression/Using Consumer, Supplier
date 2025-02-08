@@ -1,0 +1,32 @@
+    package lambda_expression;
+
+    import java.util.Scanner;
+    import java.util.function.Consumer;
+    import java.util.function.Supplier;
+
+    public class lambda_expression4 {
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the size of the Emp type");
+            int n = sc.nextInt();
+            Emp e[] = new Emp[n];
+            Consumer<Emp> cs = i -> System.out.println("Name:" + i.name + " Age:" + i.age + " Salary:" + i.salary);
+
+            for (int i = 0; i < n; i++) {
+                System.out.println("Enter the name ");
+                String name = sc.next();
+                System.out.println("Enter the age");
+                int age = sc.nextInt();
+                System.out.println("Enter the salary");
+                int salary = sc.nextInt();
+
+                Supplier<Emp> sp = () -> new Emp(name, age, salary);
+                e[i] = sp.get();
+                System.out.println("Emp Added");
+            }
+            for (Emp emp : e) {
+                cs.accept(emp);
+            }
+        }
+    }
