@@ -1,0 +1,35 @@
+package RamanaSir;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class prgm1 {          
+
+    public static int[] reverse(ArrayList<Integer> arr) {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the size");
+        int size = sc.nextInt();
+
+        System.out.println("Enter the values...");
+        for (int i = 0; i < size; i++) {
+            arr.add(sc.nextInt());
+        }
+        //Collections.sort(arr,Collections.reverseOrder());
+        Collections.reverse(arr);
+        int ar[] = new int[arr.size()];
+        for (int i = 0; i < ar.length; i++) {
+            ar[i] = arr.get(i);
+        }
+        return ar;
+
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        System.out.println(Arrays.toString(reverse(arr)));
+    }
+}
