@@ -1,0 +1,36 @@
+package RamanaSir;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class prg11 {
+
+    public static ArrayList<Integer> prime(ArrayList<Integer> arr) {
+        ArrayList<Integer> result = new ArrayList<>();
+        boolean flag;
+        for (int j = 0; j < arr.size(); j++) {
+            flag = true;
+
+            if (arr.get(j) < 2) {
+                flag = false;
+
+            }
+            for (int i = 2; i <= arr.get(j) / 2; i++) {
+                if (arr.get(j) % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag == true) {
+                result.add(arr.get(j));
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
+
+        System.out.println(prime(arr));
+    }
+}
