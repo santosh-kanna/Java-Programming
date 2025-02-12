@@ -1,0 +1,31 @@
+package RamanaSir;
+
+import java.util.Arrays;
+
+public class prgm28 {
+
+    public static int[] reversefun(int arr[]) {
+        int resultarr[] = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            resultarr[i] = reverse(arr[i]);
+        }
+        return resultarr;
+    }
+
+    public static int reverse(int value) {
+        int result = 0;
+        while (value != 0) {
+            int a = value % 10;
+            result = result * 10 + a;
+            value = value / 10;
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {23, 55, 57, 93, 1};
+        System.out.println(Arrays.toString(reversefun(arr)));
+
+    }
+}
