@@ -1,0 +1,33 @@
+package RamanaSir;
+
+import java.util.Arrays;
+
+public class prgm30 {       //sum of even digit of each element
+
+    public static int[] arrOfEle(int arr[]) {
+        int resArr[] = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            resArr[i] = sum(arr[i]);
+        }
+        return resArr;
+    }
+
+    public static int sum(int value) {
+        int res = 0;
+        while (value != 0) {
+            int a = value % 10;
+            if (a % 2 == 0) {
+                res += a;
+            }
+            value = value / 10;
+
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {231, 554, 572, 962, 24, 1};
+        System.out.println(Arrays.toString(arrOfEle(arr)));
+    }
+
+}
