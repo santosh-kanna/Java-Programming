@@ -1,0 +1,24 @@
+package string.Ramana_Sir;
+
+public class Prgm2 {
+
+    public static void main(String[] args) {
+
+        String s = "ram#123";
+        StringBuilder res1 = new StringBuilder();
+        StringBuilder res2 = new StringBuilder();
+
+        for (char ch : s.toCharArray()) {
+            if (ch >= 'a' && ch <= 'z') {
+                res1.append(ch);
+            } else {
+                res2.append(ch);
+            }
+        }
+
+        System.out.print(res2);
+        System.out.print(res1);
+
+    }
+
+}
