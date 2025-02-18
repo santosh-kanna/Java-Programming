@@ -1,0 +1,23 @@
+public class practice {
+
+    public static String reversewithoutsplit(String s) {
+
+        StringBuilder sb = new StringBuilder();
+        int dup = s.length();
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ' ') {
+                sb.append(s.substring(i + 1, dup) + " ");
+                dup = i;
+            } else if (i == 0) {
+                sb.append(s.substring(i, dup));
+            }
+        }
+        return sb.toString();
+
+    }
+
+    public static void main(String args[]) {
+        String s = "java is very easy";
+        System.out.println(reversewithoutsplit(s));
+    }
+}
