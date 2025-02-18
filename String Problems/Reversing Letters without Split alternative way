@@ -1,0 +1,36 @@
+package string.Ramana_Sir;
+
+
+public class practice {
+
+    public static String rev(String val) {
+        StringBuilder sb = new StringBuilder();
+        for (int j = val.length() - 1; j >= 0; j--) {
+            sb.append(val.charAt(j));
+        }
+        sb.append(" ");
+
+        return sb.toString();
+    }
+
+    public static String reverseletterswithoutsplit(String s) {
+        StringBuilder sbb = new StringBuilder();
+        int dup = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
+                String val = s.substring(dup, i);
+                dup = i + 1;
+                sbb.append(rev(val));
+            } else if (i == s.length() - 1) {
+                String val = s.substring(dup, s.length());
+                sbb.append(rev(val));
+            }
+        }
+        return sbb.toString().trim();
+    }
+
+    public static void main(String args[]) {
+        String s = "java is very easy";
+        System.out.println(reverseletterswithoutsplit(s));
+    }
+}
