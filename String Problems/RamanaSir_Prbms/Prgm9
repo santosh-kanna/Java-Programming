@@ -1,0 +1,11 @@
+package string.Ramana_Sir;
+
+public class Prgm9 {
+
+    public static void main(String[] args) {
+        String s = "Ramana";
+
+        s = s.replaceAll("a", "@");
+        System.out.println(s);
+    }
+}
