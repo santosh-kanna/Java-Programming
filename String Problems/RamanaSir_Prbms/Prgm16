@@ -1,0 +1,26 @@
+package string.Ramana_Sir;
+
+public class Prgm16 {
+
+    public static void main(String args[]) {
+
+        String s = "india is very beautiful";
+        StringBuilder sb = new StringBuilder();
+        char c[] = s.toCharArray();
+
+        sb.append(Character.toUpperCase(c[0]));
+
+        for (int i = 1; i < c.length - 1; i++) {
+            if (c[i + 1] == ' ' || c[i - 1] == ' ') {
+                sb.append(Character.toUpperCase(c[i]));
+            } else {
+                sb.append(c[i]);
+            }
+        }
+
+        sb.append(Character.toUpperCase(c[c.length - 1]));
+
+        System.out.println(sb.toString());
+
+    }
+}
