@@ -1,0 +1,18 @@
+package string.Ramana_Sir;
+
+public class Prgm15 {
+
+    public static void main(String[] args) {
+        String s = "RaMaNa";
+        StringBuilder sb = new StringBuilder();
+
+        for (char c : s.toCharArray()) {
+            if (Character.isLowerCase(c)) {
+                sb.append(Character.toUpperCase(c));
+            } else {
+                sb.append(Character.toLowerCase(c));
+            }
+        }
+        System.out.println(sb.toString());
+    }
+}
