@@ -1,0 +1,25 @@
+package string.Ramana_Sir;
+
+public class Prgm18 {
+
+    public static void isPali(String value, StringBuilder sb) {
+
+        StringBuilder dupp = new StringBuilder(value);    // Temporary Storing not appending
+        String ss = dupp.reverse().toString();                 // Without to String it cant store
+
+        if (value.equals(ss)) {                                       // We can use only when we converted into string
+            sb.append(value + " ");
+        }
+
+    }
+
+    public static void main(String[] args) {
+        String s = "eye level car boy";
+        String arr[] = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < arr.length; i++) {
+            isPali(arr[i], sb);
+        }
+        System.out.println(sb.toString().trim());
+    }
+}
