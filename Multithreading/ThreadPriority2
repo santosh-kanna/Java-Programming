@@ -1,0 +1,20 @@
+package thread;
+
+class MyThread3 extends Thread {
+
+}
+
+public class ThreadPriority2 {
+
+    public static void main(String[] args) {
+
+        MyThread3 t1 = new MyThread3();
+        System.out.println(t1.getName());
+        System.out.println(t1.getPriority());
+        t1.setName("ChildThread");
+        t1.setPriority(9);
+
+        System.out.println(t1.getName());
+        System.out.println(t1.getPriority());
+    }
+}
