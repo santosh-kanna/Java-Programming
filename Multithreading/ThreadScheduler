@@ -1,0 +1,67 @@
+package thread;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class T1 extends Thread {
+
+    public void run() {
+        try {
+            ThreadScheduler.t2.join();
+        } catch (InterruptedException ex) {
+
+        }
+        for (int i = 1; i <= 7; i++) {
+            System.out.println("T1 " + i);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException ex) {
+
+            }
+        }
+    }
+}
+
+class T2 extends Thread {
+
+    public void run() {
+        try {
+            ThreadScheduler.m.join();
+        } catch (InterruptedException ex) {
+
+        }
+        for (int j = 1; j <= 7; j++) {
+            System.out.println("T2 " + j);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException ex) {
+
+            }
+        }
+    }
+}
+
+public class ThreadScheduler {
+
+    static Thread m;
+    static T2 t2;
+
+    public static void main(String[] args) throws InterruptedException {
+
+        m = Thread.currentThread();
+        T1 t1 = new T1();
+        t2 = new T2();
+
+        t1.start();
+        t2.start();
+
+        for (int k = 1; k <= 7; k++) {
+            System.out.println("Main " + k);
+            if (k == 5) {
+                System.out.println(k / 0);    // See this line
+            }
+            Thread.sleep(300);
+        }
+
+    }
+}
