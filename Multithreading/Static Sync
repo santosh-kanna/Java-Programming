@@ -1,0 +1,48 @@
+package thread;
+
+import static java.awt.PageAttributes.MediaType.A;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+class A {
+
+    public static synchronized void m1(String s) throws InterruptedException {
+        for (int i = 0; i <= 10; i++) {
+            System.out.println("Executed by : " + s);
+            Thread.sleep(500);
+        }
+    }
+}
+
+class MyThread4 extends Thread {
+
+    A a;
+    String s;
+
+    public MyThread4(A a, String s) {
+        this.a = a;
+        this.s = s;
+    }
+
+    public void run() {
+        try {
+            a.m1(s);
+        } catch (InterruptedException ex) {
+
+        }
+    }
+}
+
+public class StaticSync {
+
+    public static void main(String[] args) {
+        A a1 = new A();
+        A a2 = new A();
+
+        MyThread4 t1 = new MyThread4(a1, "T1");
+        MyThread4 t2 = new MyThread4(a2, "T2");
+
+        t1.start();
+        t2.start();
+    }
+}
