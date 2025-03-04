@@ -1,0 +1,9 @@
+public class Prbm25 {
+    
+    public static void main(String[] args) {
+        String s="ramana";
+        String str=s.replace("a", "");
+        System.out.println(str);
+    }
+    
+}
