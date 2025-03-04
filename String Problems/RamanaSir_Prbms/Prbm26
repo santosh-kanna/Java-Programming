@@ -1,0 +1,16 @@
+package string.Ramana_Sir;
+
+public class Prbm26 {
+
+    public static void main(String[] args) {
+        String s = "abc";
+        StringBuilder sb = new StringBuilder();
+        for (char i = 'a'; i <= 'z'; i++) {
+            if (!s.contains(String.valueOf(i))) {
+                sb.append(i);
+            }
+        }
+        System.out.println(sb.toString());
+    }
+
+}
