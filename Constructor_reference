@@ -1,0 +1,70 @@
+package Constructorreference;
+
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+class Emp {
+
+    String name;
+    int age;
+    int empId;
+
+    Emp() {
+        System.out.println("Emp() cons");
+    }
+
+    Emp(String name) {
+        this.name = name;
+    }
+
+    Emp(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    Emp(String name, int age, int empId) {
+        this.name = name;
+        this.age = age;
+        this.empId = empId;
+    }
+
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age " + age);
+        System.out.println("Empdi " + empId);
+    }
+}
+
+interface I1<Y> {
+
+    Y m1(String s, int a, int e);
+}
+
+public class Instantiate {
+
+    public static void main(String[] args) {
+        Supplier<Emp> s1 = () -> new Emp();
+        Emp e1 = s1.get();
+        e1.display();
+        System.out.println("-------------");
+
+        Supplier<Emp> s2 = Emp::new;
+        Emp e2 = s2.get();
+        e2.display();
+        System.out.println("------------");
+
+        Function<String, Emp> f1 = f -> new Emp(f);
+        Emp e3 = f1.apply("Ram");
+        e3.display();
+        System.out.println("-----------------");
+
+        Function<String, Emp> f2 = Emp::new;
+        Emp e4 = f2.apply("Sita");
+        e4.display();
+        System.out.println("-----------------");
+
+        I1<Emp> i = Emp::new;
+        Emp e5 = i.m1("Pushpa", 40, 1);
+        e5.display();
+    }
+}
