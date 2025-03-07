@@ -1,0 +1,21 @@
+package methodreference;
+
+import java.util.function.Consumer;
+
+class Methodref {
+
+    public void printMsg(String s) {
+        System.out.println("Message: " + s);
+    }
+}
+
+public class Instance_Methodreference {
+
+    public static void main(String[] args) {
+        Consumer<String> cs = c -> System.out.println(c);
+        Methodref m = new Methodref();
+        Consumer<String> c = m::printMsg;
+        cs.accept("hi");
+        c.accept("For u");
+    }
+}
