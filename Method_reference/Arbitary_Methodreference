@@ -1,0 +1,38 @@
+package methodreference;
+
+import java.util.Arrays;
+import java.util.List;
+
+class Emp {
+
+    String name;
+    int age;
+    int salary;
+
+    public Emp(String name, int age, int salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+    public void display() {
+        System.out.println("Name " + name);
+        System.out.println("Age " + age);
+        System.out.println("Salary " + salary);
+    }
+}
+
+public class Arbitary_methodreference {
+
+    public static void main(String[] args) {
+        Emp e[] = {
+            new Emp("Amaran", 20, 40000),
+            new Emp("Mara", 30, 50000),
+            new Emp("Leo", 40, 60000)
+        };
+        List<Emp> list = Arrays.asList(e);
+        //list.stream().forEach(Emp->Emp.display());
+        list.stream().forEach(Emp::display);
+    }
+
+}
