@@ -1,0 +1,41 @@
+---Input---
+
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+
+
+
+---Output---
+
+
+    public static void pattern() {
+        
+        int input = 5;
+        int n = 5 * 2 - 1;
+        int val = input - 1;
+        for (int i = 1; i <= n; i++) {
+
+            int space = (i <= (n + 1) / 2) ? input - i : i - input;
+            int condition = (i <= (n + 1) / 2) ? 2 * i - 1 : (n - i) + val;
+
+            for (int k = 1; k <= space; k++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 1; j <= condition; j++) {
+                System.out.print("*");
+            }
+
+            if (i > (n + 1) / 2) {
+                val--;
+            }
+            System.out.println();
+        }
+    }
